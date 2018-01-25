@@ -1,5 +1,5 @@
 // Load environment variables from .env file if exists
-require('dotenv').load();
+require('dotenv').config();
 
 /**
  * app.js
