@@ -17,10 +17,13 @@ module.exports = {
 
     default: {
       adapter: 'sails-postgresql',
-      url: 'postgresql://postgres@127.0.0.1/dihlab'
+      url: process.env.sails_datastores__default__url || 'postgresql://postgres@127.0.0.1/dihlab'
     },
 
   },
 
+  models: {
+    migrate: 'alter',
+  }
   
 };

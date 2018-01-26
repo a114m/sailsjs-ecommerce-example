@@ -13,9 +13,9 @@
     "sails": "^1.0.0-45",
     "sails-hook-grunt": "^2.2.1",
     "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.4.0",
     "sails-postgresql": "^1.0.0-12",
-    "socket.io-redis": "5.2.0"
+    "socket.io-redis": "5.2.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "eslint": "4.11.0"

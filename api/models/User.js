@@ -1,3 +1,5 @@
+const _ = require('underscore')
+
 /**
  * Users.js
  *
@@ -46,7 +48,7 @@ module.exports = {
   },
 
   customToJSON: function () {
-    return _omit(this, ['password']);
+    return _.omit(this, ['password']);
   },
 
   /**

@@ -1,0 +1,33 @@
+version: '2'
+services:
+  postgres:
+    image: 'postgres:9.4.15-alpine'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=dihlab
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+    restart: always
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+
+  web:
+    build: .
+    command: '/bin/sh -c "npm install && node ./node_modules/sails/bin/sails.js lift"'
+    ports:
+      - '1337:1337'
+    volumes:
+      - .:/app
+    working_dir: /app
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=development
+      - sails_datastores__default__url=postgresql://postgres:postgres@postgres:5432/dihlab
+    restart: on-failure:10
+
+volumes:
+  postgres:
