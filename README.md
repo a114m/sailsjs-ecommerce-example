@@ -2,6 +2,7 @@
 
 Example of E-Commerce app using [Sails.js Framework v1.0](http://next.sailsjs.org) (Node.js)
 
+> **Note**: This is incomplete and non-working example.
 
 ### Version info
 
